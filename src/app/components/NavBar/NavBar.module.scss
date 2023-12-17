@@ -1,0 +1,89 @@
+.NavBar {
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	color: white;
+	height: 80px;
+	width: 100%;
+	.logo {
+		width: 65%;
+		// margin-right: auto;
+		font-size: 2.5rem;
+		margin-left: 5%;
+	}
+	ul {
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		margin: 0 7%;
+		list-style-type: none;
+		li {
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+			padding: 10px;
+			margin-left: 4%;
+			cursor: pointer;
+			a,
+			a:active,
+			a:visited {
+				color: white;
+				text-decoration: none;
+			}
+			a {
+				transition: all 0.2s ease;
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					background-color: #b4e4ff;
+					height: 3px;
+					width: 0;
+					left: -10%;
+					bottom: -6px;
+					border-radius: 30px;
+					transition: all 0.2s ease;
+				}
+				&::before {
+					content: "";
+					font-size: 30px;
+					position: absolute;
+					transform: translate(250px, 100px);
+					transition: transform 0.3s ease;
+				}
+				&:hover {
+					color: #b4e4ff;
+					&::after {
+						width: 120%;
+						left: -10%;
+						bottom: -6px;
+						transition: all 0.3s ease;
+					}
+				}
+			}
+		}
+
+		// li:first-child {
+		// 	// background-color: rgb(21, 73, 104);
+		// 	margin-right: auto;
+		// 	font-size: 3rem;
+		// }
+		li:last-child {
+			margin-right: 3%;
+		}
+	}
+}
+.languageIcon {
+	cursor: pointer;
+	position: absolute;
+	right: 2%;
+	top: 2%;
+	// background-color: rgb(46, 43, 43);
+	background-color: rgb(72, 79, 141);
+	padding: 8px 9px 5px 11px;
+	border-radius: 10px;
+	transition: transform 0.2s ease;
+	&:hover {
+		transform: rotate(8deg);
+	}
+}
