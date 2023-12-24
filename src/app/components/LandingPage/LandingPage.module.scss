@@ -1,4 +1,50 @@
+@keyframes pulseNajem {
+	20% {
+		color: #545783;
+	}
+	30% {
+		color: rgb(193, 193, 193);
+	}
+	40% {
+		color: #545783;
+	}
+}
+@keyframes pulseWynajem {
+	40% {
+		color: #545783;
+	}
+	50% {
+		color: rgb(193, 193, 193);
+	}
+	60% {
+		color: #545783;
+	}
+}
+@keyframes pulseSprzedaz {
+	60% {
+		color: #545783;
+	}
+	70% {
+		color: rgb(193, 193, 193);
+	}
+	80% {
+		color: #545783;
+	}
+}
+@keyframes pulseZakup {
+	80% {
+		color: #545783;
+	}
+	90% {
+		color: rgb(193, 193, 193);
+	}
+	100% {
+		color: #545783;
+	}
+}
+
 .containerWrap {
+	// font-size: 1.2rem;
 	position: relative;
 	background-color: #0f1b3a;
 	width: 100%;
@@ -7,40 +53,107 @@
 	max-height: 95vh;
 
 	.heroContent {
-		height: calc(100% - 100px);
-		// background-color: red;
+		// height: calc(100% - 100px);
+		// height: 100%;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
+		justify-content: space-between;
 		.leftContent {
+			display: flex;
+			flex-direction: column;
 			width: 50%;
-			margin-left: 8%;
-			margin-bottom: 100px;
+			margin-left: 12%;
+			margin-top: 3%;
+			// margin-bottom: 100px;
 
 			h1 {
 				color: white;
 				font-size: 4rem;
-				font-size: calc(2.2rem + 2.5vw);
-				div {
-					width: 100%;
-					cursor: pointer;
-					overflow: hidden;
-					transition: all 0.3s ease;
-					&:hover {
-						span {
-						}
+				font-size: calc(2.2rem + 2.3vw);
+				&:hover {
+					div > span {
+						animation: none;
 					}
 				}
-				span {
-					position: absolute;
-					display: inline-block;
+				div {
+					position: relative;
+					width: 100%;
+					height: calc(3rem + 2.5vw);
+					cursor: pointer;
+					span {
+						color: #545783;
+						position: absolute;
+						transition: transform 0.3s ease, color 0.6s ease;
+						&:hover {
+							transition: transform 0.45s ease, color 0.4s ease;
+							transform: translateX(25%);
+							color: white;
+						}
+					}
+					.najem {
+						animation: pulseNajem 5s infinite;
+					}
+					.wynajem {
+						animation: pulseWynajem 5s infinite;
+					}
+					.sprzedaz {
+						animation: pulseSprzedaz 5s infinite;
+					}
+					.zakup {
+						animation: pulseZakup 5s infinite;
+					}
+				}
+			}
+			.offersHyperlink {
+				color: white;
+				margin-top: 5%;
+				h2 {
+					cursor: pointer;
+					font-size: 3rem;
+					text-decoration: underline;
+				}
+				h3 {
+					font-size: 1.8rem;
 				}
 			}
 		}
 		.rightContent {
+			position: relative;
 			display: flex;
+			flex-direction: column;
 			align-items: center;
-			// width: 50%;
 			height: 100%;
+			margin-right: 8%;
+
+			.manImg {
+				height: calc(451px);
+				width: calc(554px);
+				// margin-bottom: 50px;
+			}
+			.name {
+				display: none;
+				position: absolute;
+				color: white;
+				bottom: 0;
+				left: 1.5%;
+				bottom: 3%;
+			}
+			.statisticsInfo {
+				text-align: center;
+				white-space: nowrap;
+				color: white;
+				display: flex;
+				flex-direction: row;
+				font-size: 1.3rem;
+				padding-top: 50px;
+				span {
+					font-weight: bold;
+					font-size: 2rem;
+				}
+				div {
+					padding: 0 30px;
+				}
+			}
 		}
 	}
 }
