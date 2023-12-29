@@ -1,14 +1,13 @@
-import Image from "next/image";
+// import Image from 'next/image';
 // import styles from "./page.module.css";
 // import LandingPage from "./components/LandingPage";
 // import LocationOffers from "./components/LocationOffers";
-import { LandingPage, LocationOffers } from "./components";
-
+import { LandingPage, LocationOffers } from './components';
 export default function Home() {
-	return (
-		<>
-			<LandingPage />
-			<LocationOffers />
-		</>
-	);
+    return (
+        <>
+            <LandingPage />
+            <LocationOffers />
+        </>
+    );
 }
