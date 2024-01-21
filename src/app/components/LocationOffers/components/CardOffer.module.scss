@@ -3,38 +3,48 @@
     background-color: transparent;
     min-width: 300px;
     min-height: 300px;
+    max-width: 470px;
     width: 30%;
-    height: 50%;
-    top: -5%;
+    height: 35%;
+    top: -4%;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     border-radius: 20px;
-    border: 1px solid transparent;
     cursor: pointer;
+    box-shadow: 20px -20px 7px 0px #5492a6;
+    transition: all 0.3s ease;
+
     &:hover {
-        .krakowImg {
+        box-shadow: 13px -13px 7px 0px #3c7488;
+        .image {
             filter: brightness(0.2);
         }
         span {
             transform: translateY(6%);
         }
     }
-    .krakowImg {
-        transition: filter 0.2s ease;
-
+    .image {
         position: absolute;
         object-fit: cover;
         filter: brightness(0.3);
     }
     span {
         transition: transform 0.2s ease;
-
         color: white;
         font-size: 4rem;
         position: absolute;
         filter: drop-shadow(30px 10px 4px #000000);
     }
+}
+.katowice {
+    top: 50%;
+}
+.krakow {
+}
+.gdansk {
+    top: 25%;
+    right: 15%;
 }
