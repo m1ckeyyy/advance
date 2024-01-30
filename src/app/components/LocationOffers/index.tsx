@@ -6,7 +6,6 @@ import CardOffer from './components/CardOffer';
 export default function LocationOffers() {
     return (
         <main className={styles.containerWrap}>
-            {/* <div> */}
             <CardOffer
                 imgsrc={'/krakow-2.jpg'}
                 name={'Kraków'}
@@ -22,7 +21,6 @@ export default function LocationOffers() {
                 name={'Gdańsk'}
                 classReference={'gdansk'}
             />
-            {/* </div> */}
         </main>
     );
 }

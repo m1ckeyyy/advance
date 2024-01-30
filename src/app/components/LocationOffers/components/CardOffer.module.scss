@@ -14,13 +14,16 @@
     overflow: hidden;
     border-radius: 20px;
     cursor: pointer;
-    box-shadow: 20px -20px 7px 0px #5492a6;
+    // box-shadow: 20px -20px 7px 0px #5492a6;
+    box-shadow: 12px -10px 16px 0px #484f8d;
+
     transition: all 0.3s ease;
 
     &:hover {
-        box-shadow: 13px -13px 7px 0px #3c7488;
+        box-shadow: 13px -13px 16px 0px #484f8d;
         .image {
-            filter: brightness(0.2);
+            // filter: brightness(0.2);
+            filter: brightness(0.6);
         }
         span {
             transform: translateY(6%);
@@ -29,7 +32,8 @@
     .image {
         position: absolute;
         object-fit: cover;
-        filter: brightness(0.3);
+        // filter: brightness(0.3);
+        filter: brightness(0.7);
     }
     span {
         transition: transform 0.2s ease;
@@ -40,11 +44,15 @@
     }
 }
 .katowice {
-    top: 50%;
+    // top: 50%;
 }
 .krakow {
+    top: 50%;
 }
 .gdansk {
     top: 25%;
     right: 15%;
+    img {
+        filter: brightness(0.59) !important;
+    }
 }

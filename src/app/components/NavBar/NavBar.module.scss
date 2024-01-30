@@ -1,88 +1,98 @@
 .NavBar {
-	display: flex;
-	align-items: center;
-	background-color: transparent;
-	color: white;
-	height: 100px;
-	width: 100%;
-	padding-left: 8%;
-	padding-right: 8%;
-	.logo {
-		white-space: nowrap;
-		width: 65%;
-		// margin-right: auto;
-		font-size: 1.5rem;
-		// margin-left: 5%;
-		display: flex;
-		align-items: center;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    height: 100px;
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+    .logo {
+        white-space: nowrap;
+        width: 65%;
+        // margin-right: auto;
+        font-size: 1.5rem;
+        // margin-left: 5%;
+        display: flex;
+        align-items: center;
 
-		img {
-			cursor: pointer;
-		}
-		p {
-			margin-left: 15px;
-		}
-	}
-	ul {
-		display: flex;
-		justify-content: flex-end;
-		width: 100%;
-		// margin: 0 7%;
-		list-style-type: none;
-		li {
-			display: flex;
-			align-items: center;
-			white-space: nowrap;
-			padding: 10px;
-			margin-left: 4%;
+        img {
+            cursor: pointer;
+        }
+        p {
+            margin-left: 15px;
+        }
+    }
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        // margin: 0 7%;
+        list-style-type: none;
+        li {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            padding: 10px;
+            margin-left: 4%;
 
-			cursor: pointer;
-			a,
-			a:active,
-			a:visited {
-				color: white;
-				text-decoration: none;
-			}
-			a {
-				transition: all 0.2s ease;
-				position: relative;
-				&::after {
-					content: "";
-					position: absolute;
-					background-color: #b4e4ff;
-					height: 3px;
-					width: 0;
-					left: -10%;
-					bottom: -6px;
-					border-radius: 30px;
-					transition: all 0.2s ease;
-				}
-				&::before {
-					content: "";
-					font-size: 30px;
-					position: absolute;
-					transform: translate(250px, 100px);
-					transition: transform 0.3s ease;
-				}
-				&:hover {
-					color: #b4e4ff;
-					&::after {
-						width: 120%;
-						left: -10%;
-						bottom: -6px;
-						transition: all 0.3s ease;
-					}
-				}
-			}
-		}
+            cursor: pointer;
+            a,
+            a:active,
+            a:visited {
+                color: white;
+                text-decoration: none;
+            }
+            a {
+                transition: all 0.2s ease;
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    background-color: #b4e4ff;
+                    height: 3px;
+                    width: 0;
+                    left: -10%;
+                    bottom: -6px;
+                    border-radius: 30px;
+                    transition: all 0.2s ease;
+                }
+                &::before {
+                    content: '';
+                    font-size: 30px;
+                    position: absolute;
+                    transform: translate(250px, 100px);
+                    transition: transform 0.3s ease;
+                }
+                &:hover {
+                    color: #b4e4ff;
+                    &::after {
+                        width: 120%;
+                        left: -10%;
+                        bottom: -6px;
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+        }
 
-		// li:first-child {
-		// 	// background-color: rgb(21, 73, 104);
-		// 	margin-right: auto;
-		// 	font-size: 3rem;
-		// }
-		li:last-child {
-			margin-right: 3%;
-		}
-	}
+        li:last-child {
+            margin-right: 3%;
+        }
+
+        .dropDownMenuBtn {
+            display: none;
+            background: none;
+            border: none;
+        }
+    }
+}
+@media (max-width: 960px) {
+    .NavBar {
+        ul {
+            .dropDownMenuBtn {
+                display: block;
+            }
+        }
+    }
 }
