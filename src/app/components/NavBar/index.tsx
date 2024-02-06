@@ -31,7 +31,7 @@ function NavBar() {
             </div>
             <ul>
                 <li>
-                    <Link href="#oferty">Oferty</Link>
+                    <Link href="#offers">Oferty</Link>
                 </li>
                 <li>
                     <Link href="#o-nas">O nas</Link>
