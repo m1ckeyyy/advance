@@ -52,6 +52,12 @@
 .gdansk {
     top: 25%;
     right: 15%;
+    &:hover {
+        img {
+            transition: filter 0.1s ease;
+            filter: brightness(0.4) !important;
+        }
+    }
     img {
         filter: brightness(0.59) !important;
     }
