@@ -44,6 +44,7 @@
 }
 
 .containerWrap {
+    // overflow: hidden;
     z-index: 2;
     position: relative;
     background-color: #0f1b3a;
@@ -126,6 +127,7 @@
             }
         }
         .rightContent {
+            width: 50%;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -157,12 +159,17 @@
                 flex-direction: row;
                 font-size: 1.3rem;
                 padding-top: 2vh;
+
                 span {
                     font-weight: bold;
                     font-size: 2rem;
                 }
                 div {
-                    padding: 0 30px;
+                    padding: 0 1.5vw;
+                    &:first-child,
+                    &:last-child {
+                        padding: 0;
+                    }
                 }
             }
         }
@@ -181,5 +188,35 @@
     transition: transform 0.2s ease;
     &:hover {
         transform: rotate(8deg);
+    }
+}
+@media (max-width: 1015px) {
+    .containerWrap {
+        .heroContent {
+            .leftContent {
+                width: 100%;
+                margin: 0;
+                transform: translateX(20%);
+                h1 {
+                    width: 0;
+                    font-size: 7rem;
+                    div {
+                        width: 0;
+                    }
+                }
+            }
+            .rightContent {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 1139px) {
+    .statisticsInfo {
+        div {
+            // background-color: red;
+            transform: translateY(30px);
+        }
     }
 }

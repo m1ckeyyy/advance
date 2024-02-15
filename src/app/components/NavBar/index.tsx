@@ -29,7 +29,7 @@ function NavBar() {
                     NIERUCHOMOŚCI
                 </p>
             </div>
-            <ul>
+            <ul className={`${isMenuOpen ? styles.menuOpen : ''}`}>
                 <li>
                     <Link href="#offers">Oferty</Link>
                 </li>
@@ -43,8 +43,8 @@ function NavBar() {
                     <Link href="#kontakt">Kontakt</Link>
                 </li>
                 <button className={styles.dropDownMenuBtn} onClick={toggleMenu}>
-                    {isMenuOpen ? <IoCloseSharp size="2rem" /> : <IoMenu size="2rem" />}
-                    {isMenuOpen + ''}
+                    {isMenuOpen ? <IoCloseSharp size="3rem" /> : <IoMenu size="3rem" />}
+                    {/* {isMenuOpen + ''} */}
                 </button>
             </ul>
         </nav>

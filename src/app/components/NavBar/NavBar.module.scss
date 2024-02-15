@@ -27,7 +27,6 @@
         display: flex;
         justify-content: flex-end;
         width: 100%;
-        // margin: 0 7%;
         list-style-type: none;
         li {
             display: flex;
@@ -81,18 +80,42 @@
         }
 
         .dropDownMenuBtn {
+            cursor: pointer;
             display: none;
             background: none;
             border: none;
+            position: absolute;
+            right: 15px;
+            top: 15px;
         }
     }
 }
-@media (max-width: 960px) {
+@media (max-width: 1015px) {
     .NavBar {
+        padding-right: 0;
         ul {
+            li {
+                display: none;
+            }
             .dropDownMenuBtn {
                 display: block;
             }
+        }
+
+        ul.menuOpen {
+            li {
+                display: block;
+            }
+            display: flex;
+            flex-direction: column;
+            font-size: 3rem;
+            height: 100dvh;
+
+            // padding-right: 2500px;
+            padding-bottom: 10px;
+            border-radius: 0px 0px 0px 30px;
+            background-color: black;
+            z-index: 2;
         }
     }
 }
