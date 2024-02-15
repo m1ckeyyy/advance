@@ -193,24 +193,20 @@
 @media (max-width: 1015px) {
     .containerWrap {
         .heroContent {
+            height: calc(100% - 200px);
             .leftContent {
-                // width: 100%;
                 margin: 0;
                 transform: translateX(20%);
                 h1 {
                     width: 0;
-                    // font-size: 7rem;
                     font-size: calc(2rem + 4vw);
-                    // font-size: 1rem;
                     div {
                         width: 0;
                         margin-bottom: 20px;
                         span {
                             &:hover {
                                 transition: all 0.3s ease;
-                                // transition: transform 0.45s ease, color 0.4s ease;
                                 transform: translateX(0);
-                                // color: white;
                             }
                         }
                     }

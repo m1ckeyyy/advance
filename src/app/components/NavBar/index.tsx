@@ -29,7 +29,7 @@ function NavBar() {
                     NIERUCHOMOŚCI
                 </p>
             </div>
-            <ul className={`${isMenuOpen ? styles.menuOpen : ''}`}>
+            <ul className={`${isMenuOpen ? styles.menuOpen : ''}`} onClick={toggleMenu}>
                 <li>
                     <Link href="#offers">Oferty</Link>
                 </li>
