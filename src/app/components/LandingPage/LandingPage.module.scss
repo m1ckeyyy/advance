@@ -194,6 +194,9 @@
     .containerWrap {
         .heroContent {
             height: calc(100% - 200px);
+            .languageIcon {
+                bottom: 25%;
+            }
             .leftContent {
                 margin: 0;
                 transform: translateX(20%);
