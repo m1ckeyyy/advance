@@ -91,6 +91,12 @@
     }
 }
 @media (max-width: 1015px) {
+    .NavBar:has(> ul.menuOpen) {
+        padding-left: 0;
+        .logo {
+            display: none;
+        }
+    }
     .NavBar {
         padding-right: 0;
         ul {
@@ -108,12 +114,11 @@
             }
             display: flex;
             flex-direction: column;
+            align-items: center;
             font-size: 3rem;
             height: 100dvh;
-
-            // padding-right: 2500px;
-            padding-bottom: 10px;
-            border-radius: 0px 0px 0px 30px;
+            padding-bottom: 65px;
+            border-radius: 0px 0px 30px 30px;
             background-color: black;
             z-index: 2;
         }
