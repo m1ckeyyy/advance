@@ -1,6 +1,7 @@
 import styles from './AboutUs.module.scss';
 import { DM_Sans } from 'next/font/google';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const dmSans = DM_Sans({ subsets: ['latin'], weight: '300' });
 
@@ -17,11 +18,13 @@ export default function AboutUs() {
                     obowiązującymi przepisami prawnymi.
                 </span>
             </h3>
-            <h4>
+            <div className={styles.descriptionFooter}>
                 <div>
-                    <span>Zadowolony klient</span> to cel naszej pracy!
+                    <Link href="#opinie">
+                        <span>Zadowolony klient</span> to cel naszej pracy!
+                    </Link>
                 </div>
-            </h4>
+            </div>
         </main>
     );
 }
