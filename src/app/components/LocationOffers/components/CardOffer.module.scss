@@ -62,3 +62,26 @@
         filter: brightness(0.59) !important;
     }
 }
+@media (max-width: 1015px) {
+    .cardOffer {
+        width: 50%;
+        min-height: 220px;
+        height: 20%;
+    }
+    .krakow {
+        top: 58%;
+    }
+    .gdansk {
+        top: 27%;
+    }
+}
+@media (max-width: 740px) {
+    .gdansk {
+        right: auto;
+    }
+    .cardOffer {
+        width: 70%;
+        min-height: 220px;
+        height: 20%;
+    }
+}

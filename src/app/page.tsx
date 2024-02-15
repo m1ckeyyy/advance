@@ -3,12 +3,14 @@ import styles from './page.module.css';
 // import LandingPage from "./components/LandingPage";
 // import LocationOffers from "./components/LocationOffers";
 //      t est comment
-import { LandingPage, LocationOffers } from './components';
+import { LandingPage, LocationOffers, Testimonials, AboutUs } from './components';
 export default function Home() {
     return (
         <>
             <LandingPage />
             <LocationOffers />
+            <AboutUs />
+            <Testimonials />
         </>
     );
 }
