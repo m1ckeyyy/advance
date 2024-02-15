@@ -43,7 +43,7 @@ function NavBar() {
                     <Link href="#kontakt">Kontakt</Link>
                 </li>
                 <button className={styles.dropDownMenuBtn} onClick={toggleMenu}>
-                    {isMenuOpen ? <IoCloseSharp size="3rem" /> : <IoMenu size="3rem" />}
+                    {isMenuOpen ? <IoCloseSharp size="3rem" color="white" /> : <IoMenu size="3rem" color="white" />}
                     {/* {isMenuOpen + ''} */}
                 </button>
             </ul>
