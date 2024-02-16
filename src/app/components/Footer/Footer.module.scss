@@ -1,0 +1,54 @@
+.containerWrap {
+    position: relative;
+    background: linear-gradient(178deg, rgb(15, 27, 57) 4%, rgb(100 95 80 / 71%) 43%, rgb(15, 27, 58) 100%);
+    background: #0f1b3a;
+    width: 100%;
+    height: 165px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 20px 50px;
+    z-index: 2;
+    .rightsReserved {
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+        color: #dadada;
+        font-weight: normal;
+    }
+    .facebook {
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        transition: transform 0.2s ease;
+        &:hover {
+            transform: rotate(-15deg);
+        }
+    }
+    .contactRow,
+    .navigationRow {
+        display: flex;
+        flex-direction: column;
+    }
+    .contactRow {
+        margin-right: 30px;
+        font-size: 1rem;
+        color: white;
+
+        .rowHeader {
+            font-size: 1.1rem;
+            color: #949494;
+        }
+    }
+    .navigationRow {
+        font-size: 1rem;
+        color: white;
+        cursor: pointer;
+
+        .rowHeader {
+            color: #949494;
+            font-size: 1.1rem;
+            cursor: auto;
+        }
+    }
+}
