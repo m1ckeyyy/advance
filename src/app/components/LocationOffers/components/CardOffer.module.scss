@@ -14,15 +14,11 @@
     overflow: hidden;
     border-radius: 20px;
     cursor: pointer;
-    // box-shadow: 20px -20px 7px 0px #5492a6;
     box-shadow: 12px -10px 16px 0px #484f8d;
-
     transition: all 0.3s ease;
-
     &:hover {
         box-shadow: 13px -13px 16px 0px #484f8d;
         .image {
-            // filter: brightness(0.2);
             filter: brightness(0.6);
         }
         span {
@@ -32,7 +28,6 @@
     .image {
         position: absolute;
         object-fit: cover;
-        // filter: brightness(0.3);
         filter: brightness(0.7);
     }
     span {
@@ -43,9 +38,7 @@
         filter: drop-shadow(30px 10px 4px #000000);
     }
 }
-.katowice {
-    // top: 50%;
-}
+
 .krakow {
     top: 50%;
 }
