@@ -40,12 +40,7 @@
     }
 }
 
-// .krakow {
-//     top: 50%;
-// }
 .gdansk {
-    // top: 25%;
-    // right: 15%;
     &:hover {
         img {
             transition: filter 0.1s ease;
@@ -60,24 +55,28 @@
     .cardOffer {
         width: 50%;
         width: 450px;
-        // min-height: 220px;
-        // height: 20%;
-    }
-    .krakow {
-        // top: 58%;
-    }
-    .gdansk {
-        // top: 27%;
     }
 }
 @media (max-width: 740px) {
-    .gdansk {
-        // right: auto;
-    }
     .cardOffer {
-        // width: 70%;
         width: 380px;
-        // min-height: 220px;
-        // height: 20%;
+    }
+}
+@media (max-width: 505px) {
+    .cardOffer {
+        // min-width: 245px;
+        min-height: 250px;
+        width: 330px;
+        width: 80%;
+        height: 30%;
+        span {
+            font-size: 3rem;
+        }
+    }
+}
+@media (max-width: 370px) {
+    .cardOffer {
+        min-width: 285px;
+        width: 285px;
     }
 }
