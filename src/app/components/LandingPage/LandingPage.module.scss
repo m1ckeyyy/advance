@@ -215,11 +215,17 @@
                     }
                 }
                 .offersHyperlink {
+                    // display: flex;
+                    // flex-direction: column;
                     h3 {
                         font-size: calc(1rem + 1vw);
+                        // display: inline;
+                        white-space: nowrap;
                     }
                     h2 {
                         font-size: calc(2rem + 1vw);
+                        display: inline;
+                        white-space: nowrap;
                     }
                 }
             }
@@ -235,6 +241,17 @@
         div {
             // background-color: red;
             transform: translateY(30px);
+        }
+    }
+}
+@media (max-width: 385px) {
+    .containerWrap {
+        .heroContent {
+            .leftContent {
+                h1 {
+                    font-size: 2.7rem;
+                }
+            }
         }
     }
 }

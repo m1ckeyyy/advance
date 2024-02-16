@@ -13,7 +13,7 @@
 
     .title {
         font-size: calc(3rem + 5.5vw);
-        margin-bottom: 6%;
+        padding: 8% 0 6% 0;
         white-space: nowrap;
     }
     .description {
@@ -69,11 +69,22 @@
 }
 @media (max-width: 508px) {
     .containerWrap {
+        padding: 0 6% 0 4%;
+
         .description {
             font-size: 1.35rem;
+            img {
+                width: 25px;
+                height: 25px;
+                margin-top: 3px;
+            }
         }
         .descriptionFooter {
-            display: none;
+            transform: translateX(45px);
+            font-size: 0.8rem;
+            &:hover {
+                transform: translate(45px, 6px);
+            }
         }
     }
 }
