@@ -22,10 +22,18 @@ export default function Footer() {
             </div>
             <div className={styles.navigationRow}>
                 <span className={styles.rowHeader}>Nawiguj</span>
-                <span>Oferty</span>
-                <span>O nas</span>
-                <span>Opinie</span>
-                <span>Kontakt</span>
+                <span>
+                    <Link href="#offers">Oferty</Link>
+                </span>
+                <span>
+                    <Link href="#o-nas">O nas</Link>
+                </span>
+                <span>
+                    <Link href="#opinie">Opinie</Link>
+                </span>
+                <span>
+                    <Link href="#kontakt">Kontakt</Link>
+                </span>
             </div>
             <div className={styles.facebook} title="Facebook">
                 <Link href={'https://www.facebook.com/profile.php?id=100057415211111'} target="_blank">

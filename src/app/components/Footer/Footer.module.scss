@@ -44,7 +44,10 @@
         font-size: 1rem;
         color: white;
         cursor: pointer;
-
+        a {
+            text-decoration: none;
+            color: white;
+        }
         .rowHeader {
             color: #949494;
             font-size: 1.1rem;
