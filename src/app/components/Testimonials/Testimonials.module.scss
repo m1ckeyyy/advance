@@ -1,9 +1,51 @@
 .containerWrap {
     position: relative;
-    background: linear-gradient(178deg, rgb(15, 27, 58) 4%, rgb(34 245 245 / 48%) 43%, rgb(15, 27, 58) 100%);
+    background: linear-gradient(180deg, rgb(21 28 58) 9%, rgba(34, 245, 245, 0.48) 43%, rgb(15, 27, 58) 100%);
     width: 100%;
-    height: 100%;
-    height: 7000px;
-    max-height: 95vh;
-    padding: 0 15%;
+    // height: 100%;
+    // height: 7000px;
+    // max-height: 95vh;
+    padding: 0 20%;
+    color: white;
+
+    padding-top: 10%;
+    .header {
+        font-size: 3rem;
+        margin-bottom: 35px;
+        // white-space: nowrap;
+        span {
+            font-weight: 800;
+            text-decoration: underline;
+        }
+    }
+    .firstMessage,
+    .secondMessage,
+    .thirdMessage,
+    .fourthMessage {
+        z-index: 2;
+        background-color: #131b39;
+        background: linear-gradient(90deg, rgba(9, 121, 103, 1) 0%, rgba(19, 27, 57, 1) 67%);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        width: 47%;
+        border: 2px solid rgb(180, 188, 210);
+        transition: border 0.2s ease;
+        cursor: pointer;
+        &:hover {
+            border: 2px solid white;
+        }
+    }
+    .secondMessageContainer,
+    .fourthMessageContainer {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10%;
+    }
+    .firstMessageContainer,
+    .thirdMessageContainer {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 10%;
+    }
 }
