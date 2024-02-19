@@ -1,51 +1,82 @@
 .containerWrap {
     position: relative;
     background: linear-gradient(180deg, rgb(21 28 58) 9%, rgba(34, 245, 245, 0.48) 43%, rgb(15, 27, 58) 100%);
+    background: linear-gradient(180deg, rgb(21, 28, 58) 33%, rgb(52 60 80) 59%, rgb(15, 27, 58) 87%);
     width: 100%;
     // height: 100%;
     // height: 7000px;
     // max-height: 95vh;
-    padding: 0 20%;
+    padding: 0 10%;
     color: white;
 
-    padding-top: 10%;
+    padding-top: 9%;
     .header {
-        font-size: 3rem;
-        margin-bottom: 35px;
+        font-size: 2rem;
+        margin-bottom: 10%;
         // white-space: nowrap;
-        span {
-            font-weight: 800;
-            text-decoration: underline;
+        display: flex;
+        justify-content: center;
+        .slogan {
+            display: inline;
+            span {
+                font-weight: 800;
+                text-decoration: underline;
+                color: #86d3c5;
+            }
         }
     }
-    .firstMessage,
-    .secondMessage,
-    .thirdMessage,
-    .fourthMessage {
-        z-index: 2;
-        background-color: #131b39;
-        background: linear-gradient(90deg, rgba(9, 121, 103, 1) 0%, rgba(19, 27, 57, 1) 67%);
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        width: 47%;
-        border: 2px solid rgb(180, 188, 210);
-        transition: border 0.2s ease;
-        cursor: pointer;
-        &:hover {
-            border: 2px solid white;
+    .messages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .firstMessage,
+        .secondMessage,
+        .thirdMessage,
+        .fourthMessage {
+            z-index: 2;
+            background-color: #131b39;
+            background: linear-gradient(90deg, rgba(9, 121, 103, 1) 0%, rgba(19, 27, 57, 1) 67%);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            width: 55%;
+            min-width: 270px;
+            // max-width: 500px;
+
+            border: 2px solid rgb(180, 188, 210);
+            transition: border 0.2s ease;
+            cursor: pointer;
+            &:hover {
+                border: 2px solid white;
+            }
         }
-    }
-    .secondMessageContainer,
-    .fourthMessageContainer {
-        display: flex;
-        justify-content: flex-end;
-        margin-right: 10%;
-    }
-    .firstMessageContainer,
-    .thirdMessageContainer {
-        display: flex;
-        justify-content: flex-start;
-        margin-left: 10%;
+        .secondMessageContainer,
+        .fourthMessageContainer {
+            display: flex;
+            // justify-content: flex-end;
+            justify-content: flex-start;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            // margin-right: 10%;
+            width: 60%;
+            svg {
+                margin-left: 15px;
+            }
+        }
+        .firstMessageContainer,
+        .thirdMessageContainer {
+            display: flex;
+            // justify-content: flex-start;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            align-items: center;
+            // margin-left: 10%;
+            width: 60%;
+            svg {
+                margin-right: 15px;
+            }
+        }
     }
 }
