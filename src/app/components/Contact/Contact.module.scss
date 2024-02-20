@@ -10,4 +10,20 @@
     padding: 0 20%;
     color: white;
     padding-top: 10%;
+    .overlayWrap {
+        display: flex;
+        .imageContainer {
+            img {
+                border: 2px solid white;
+                border-radius: 10px;
+                // overflow: hidden;
+                // zoom: 1.2;
+            }
+        }
+        .contactContainer {
+            // background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+    }
 }
