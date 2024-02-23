@@ -6,15 +6,14 @@ const inter = Inter({ subsets: ['latin'] });
 const DMSans = DM_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'AAA',
-    description: 'Aaa',
+    title: 'Advance Nieruchomości',
+    description: 'Advance Nieruchomości',
+    icons: {
+        icon: '/images/logo3.png',
+    },
 };
 
-export default function RootLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
             <body className={inter.className}>{children}</body>

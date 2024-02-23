@@ -14,7 +14,7 @@
         display: flex;
         .imageContainer {
             img {
-                border: 2px solid white;
+                // border: 2px solid white;
                 border-radius: 10px;
                 // overflow: hidden;
                 // zoom: 1.2;
@@ -22,7 +22,8 @@
         }
         .contactContainer {
             // background-color: red;
-            border: 2px solid white;
+            padding: 15px;
+            // border: 2px solid white;
             border-radius: 10px;
         }
     }
