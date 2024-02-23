@@ -22,7 +22,7 @@ function NavBar() {
         <nav className={`${styles.NavBar} ${dmSans.className}`}>
             {/* click-scroll to top */}
             <div className={styles.logo}>
-                <Image src="/logo3.png" alt="Small logo" width={62} height={62} />
+                <Image src="/images/logo3.png" alt="Small logo" width={62} height={62} />
                 <p>
                     ADVANCE
                     <br />

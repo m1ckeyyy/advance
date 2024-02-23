@@ -37,7 +37,7 @@ export default function LandingPage() {
                 </div>
                 <div className={styles.rightContent}>
                     <div className={styles.imgWrap}>
-                        <Image src="/sample-man.png" width={554} height={451} alt="man" className={styles.manImg} />
+                        <Image src="/images/sample-man.png" width={554} height={451} alt="man" className={styles.manImg} />
                         <p className={styles.name}>
                             Ziutek Ziutkowski,
                             <br />
