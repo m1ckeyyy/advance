@@ -1,17 +1,18 @@
 .containerWrap {
     position: relative;
-    background: linear-gradient(180deg, rgb(21 28 58) 9%, rgba(74, 85, 85, 0.48) 43%, rgb(15, 27, 58) 100%);
+    background: linear-gradient(180deg, rgb(15 27 58) 9%, rgba(74, 85, 85, 0.48) 43%, rgb(15, 27, 58) 100%);
     width: 100%;
     // height: 100%;
     // height: 7000px;
     // max-height: 95vh;
     height: 80vh;
 
-    padding: 0 20%;
+    padding: 0 18%;
     color: white;
-    padding-top: 10%;
+    padding-top: 6%;
     .overlayWrap {
         display: flex;
+        justify-content: space-evenly;
         .imageContainer {
             img {
                 // border: 2px solid white;
@@ -21,10 +22,66 @@
             }
         }
         .contactContainer {
-            // background-color: red;
             padding: 15px;
-            // border: 2px solid white;
             border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h3 {
+                font-size: 3rem;
+                text-decoration: underline;
+                padding-bottom: 35px;
+                text-align: center;
+                svg {
+                    margin-left: 15px;
+                    margin-top: 7px;
+                    position: absolute;
+                }
+            }
+            span {
+                font-size: 1.4rem;
+                white-space: nowrap;
+            }
         }
     }
 }
+@media (max-width: 1200px) {
+    .containerWrap {
+        padding: 0 9%;
+    }
+}
+@media (max-width: 800px) {
+    .containerWrap {
+        .overlayWrap {
+            flex-direction: column;
+            .imageContainer {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+@media (max-width: 430px) {
+    .containerWrap {
+        .overlayWrap {
+            flex-direction: column;
+            .contactContainer {
+                h3 {
+                    svg {
+                        display: none;
+                    }
+                }
+            }
+            .imageContainer {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 270px;
+                    height: 265px;
+                }
+            }
+        }
+    }
+}
+//320px
