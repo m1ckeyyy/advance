@@ -7,7 +7,7 @@ export default function Contact() {
     return (
         <div className={styles.containerWrap}>
             <div className={styles.overlayWrap}>
-                <div className={styles.imageContainer}>
+                <div className={styles.imageContainer} id="kontakt">
                     <Image src="/images/woman-phone.png" alt="Woman on the phone" width={400} height={395} />
                 </div>
                 <div className={styles.contactContainer}>

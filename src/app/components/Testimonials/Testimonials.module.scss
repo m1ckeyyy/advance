@@ -32,7 +32,8 @@
         .fourthMessage {
             z-index: 2;
             background-color: #131b39;
-            background: linear-gradient(90deg, rgba(9, 121, 103, 1) 0%, rgba(19, 27, 57, 1) 67%);
+            // background: linear-gradient(90deg, rgba(9, 121, 103, 1) 0%, rgba(19, 27, 57, 1) 67%);
+            background: linear-gradient(90deg, rgb(9 80 121) 0%, rgb(19, 27, 57) 67%);
             padding: 15px;
             border-radius: 10px;
             width: 55%;
@@ -80,6 +81,9 @@
                 width: 100%;
                 // background-color: red;
             }
+            .fourthMessageContainer {
+                padding-bottom: 70px;
+            }
         }
     }
 }
@@ -90,10 +94,6 @@
             .secondMessage,
             .thirdMessage,
             .fourthMessage {
-                // min-width: auto;
-                // width: 85%;
-                // background-color: red;
-                // display: none;
                 min-width: auto;
                 width: 200px;
             }
