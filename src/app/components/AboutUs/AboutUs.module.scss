@@ -88,3 +88,13 @@
         }
     }
 }
+@media (max-width: 330px) {
+    .containerWrap {
+        .descriptionFooter {
+            transform: translateX(20px);
+            &:hover {
+                transform: translate(20px, 6px);
+            }
+        }
+    }
+}
