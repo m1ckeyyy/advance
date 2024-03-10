@@ -1,0 +1,15 @@
+.containerWrap {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+    background-color: #8ea9c1;
+    color: white;
+    .inputBox {
+        width: 300px;
+        background-color: #0a1c2d;
+        display: flex;
+        justify-content: center;
+    }
+}

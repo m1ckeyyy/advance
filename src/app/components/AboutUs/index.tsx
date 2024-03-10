@@ -7,7 +7,7 @@ const dmSans = DM_Sans({ subsets: ['latin'], weight: '300' });
 
 export default function AboutUs() {
     return (
-        <main className={`${styles.containerWrap} ${dmSans.className}`}>
+        <main className={`${styles.containerWrap} ${dmSans.className}`} id="o-nas">
             <h2 className={styles.title}>Kim jesteśmy?</h2>
             <h3 className={styles.description}>
                 <Image src="/images/logo3.png" alt="Small logo" width={40} height={40} />:
