@@ -5,21 +5,24 @@ import styles from './admin.module.scss';
 import axios from 'axios';
 
 export default function Admin() {
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
     const [isVerified, setIsVerified] = useState<boolean>(false);
-    const handleSubmit = async (e: Event) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(e);
+        // console.log(e);
         axios
-            .get('https://worldtimeapi.org/api/ip')
+            .post('http://localhost:4000/admin', { email, password })
             .then((res) => {
                 console.log('xd: ', res);
                 if (res.status === 200) {
                     //to be adjusted
+                    //res.json()
                 }
                 setIsVerified(true);
             })
             .catch((err: string) => {
-                console.log('Error: ', err);
+                console.error('Fetching error, message: ', err);
             });
 
         // try {
@@ -33,28 +36,23 @@ export default function Admin() {
         //     console.error(error);
         // }
     };
-    const callAPI = async (e: any) => {
-        e.preventDefault();
-        try {
-            const res = await fetch(`https://jsonplaceholder.typicode.com/posts/1`);
-            const data = await res.json();
-            console.log(data);
-        } catch (err) {
-            console.log(err);
-        }
-    };
-    const toggleVerify = () => {
-        setIsVerified((prev) => !prev);
-    };
+
+    // const toggleVerify = () => {
+    //     setIsVerified((prev) => !prev);
+    // };
+    console.log(email, password);
     return (
         <div className={styles.containerWrap}>
             <div className={styles.inputBox}>
+                <h2>admin panel</h2>
                 <form onSubmit={handleSubmit}>
-                    <h2>hey</h2>
-                    <button type="submit">click me</button>
+                    <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+
+                    <button type="submit">submit</button>
                 </form>
-                <div className={isVerified ? styles.verified : ''}>{isVerified ? 'User verified' : 'User not verified'}</div>
-                <button onClick={toggleVerify}> toggle verify</button>
+                {/* <button onClick={toggleVerify}> toggle verify</button> */}
+                <div className={`${isVerified ? styles.verified : ''} ${styles['verificationStatus']}`}>{isVerified ? 'User verified' : 'User not verified'}</div>
             </div>
         </div>
     );
