@@ -10,9 +10,9 @@ export default function Admin() {
     const [isVerified, setIsVerified] = useState<boolean>(false);
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // console.log(e);
+        console.log('he', email, password);
         axios
-            .post('http://localhost:4000/admin', { email, password })
+            .post('http://localhost:4000/admin-login', { email, password }, { withCredentials: true })
             .then((res) => {
                 console.log('xd: ', res);
                 if (res.status === 200) {
@@ -22,7 +22,7 @@ export default function Admin() {
                 setIsVerified(true);
             })
             .catch((err: string) => {
-                console.error('Fetching error, message: ', err);
+                console.error('Fetching error, message: ', err); //99StoczniaGdanska
             });
 
         // try {
