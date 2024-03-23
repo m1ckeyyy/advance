@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './admin.module.scss';
 import axios from 'axios';
 import { FaArrowRight } from 'react-icons/fa6';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { redirect } from 'next/navigation';
+import { isRedirectError } from 'next/dist/client/components/redirect';
 
 export default function Admin() {
     const [email, setEmail] = useState<string>('');
@@ -13,9 +15,32 @@ export default function Admin() {
     const [loginFailed, setLoginFailed] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
+    useEffect(() => {
+        // if (isVerified) redirect('/edit-offers');
+    }, [isVerified]);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         console.log('he', email, password);
+
+        // axios
+        //     .post(
+        //         'http://localhost:4000/admin-login',
+        //         { email, password },
+        //         {
+        //             withCredentials: true,
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //         }
+        //     )
+        //     .then((e) => {
+        //         console.log(e);
+        //     })
+        //     .catch((e) => {
+        //         console.log(e.response.status);
+        //     });
+
         try {
             setIsLoading(true);
             const response = await axios.post(
@@ -32,6 +57,8 @@ export default function Admin() {
                 console.log('This is response: ', response, typeof response.status);
                 setIsVerified(true);
                 setLoginFailed(false);
+                // redirect('/edit-offers');
+                //ROUTE TO /edit-offers
             }
             setIsLoading(false);
             console.log('setloadingfalse');
@@ -42,9 +69,14 @@ export default function Admin() {
             }
             setIsLoading(false);
             console.log('setloadingfalse');
+
+            if (isRedirectError(error)) {
+                throw error;
+            }
+        } finally {
+            setIsLoading(false);
         }
     };
-
     // const toggleVerify = () => {
     //     setIsVerified((prev) => !prev);
     // };

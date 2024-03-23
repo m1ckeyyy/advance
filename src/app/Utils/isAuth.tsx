@@ -1,6 +1,6 @@
 'use client';
 import { isAuthenticated } from './Auth';
-import { Component, ReactNode, useEffect } from 'react';
+import { useEffect } from 'react';
 import { redirect } from 'next/navigation';
 
 export default function isAuth(Component: React.ComponentType<any>) {

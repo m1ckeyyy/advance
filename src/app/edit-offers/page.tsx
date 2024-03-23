@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import isAuth from '../Utils/isAuth';
 import styles from './EditOffers.module.scss';
 
-export default function EditOffers() {
+function EditOffers() {
     return <div className={styles.containerWrap}>hey</div>;
 }
+export default isAuth(EditOffers);
