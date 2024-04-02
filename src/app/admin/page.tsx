@@ -60,14 +60,14 @@ export default function Admin() {
                 // redirect('/edit-offers');
                 //ROUTE TO /edit-offers
             }
-            setIsLoading(false);
+            // setIsLoading(false);
             console.log('setloadingfalse');
         } catch (error: any) {
             if (error.response && error.response.status === 401) {
                 setLoginFailed(true);
                 setIsVerified(false);
             }
-            setIsLoading(false);
+            // setIsLoading(false);
             console.log('setloadingfalse');
 
             if (isRedirectError(error)) {
