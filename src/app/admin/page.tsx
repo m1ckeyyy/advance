@@ -7,6 +7,8 @@ import { FaArrowRight } from 'react-icons/fa6';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { redirect } from 'next/navigation';
 import { isRedirectError } from 'next/dist/client/components/redirect';
+//@ts-ignore
+//import Cookies from 'js-cookie';
 
 export default function Admin() {
     const [email, setEmail] = useState<string>('');
@@ -16,30 +18,12 @@ export default function Admin() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
-        // if (isVerified) redirect('/edit-offers');
+        //if (isVerified) redirect('/edit-offers');
     }, [isVerified]);
-
     const handleSubmit = async (e: React.FormEvent) => {
+        //console.log('j: ', Cookies.get('access_token'));
         e.preventDefault();
-        console.log('he', email, password);
-
-        // axios
-        //     .post(
-        //         'http://localhost:4000/admin-login',
-        //         { email, password },
-        //         {
-        //             withCredentials: true,
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //             },
-        //         }
-        //     )
-        //     .then((e) => {
-        //         console.log(e);
-        //     })
-        //     .catch((e) => {
-        //         console.log(e.response.status);
-        //     });
+        //console.log('he', email, password);
 
         try {
             setIsLoading(true);
@@ -54,21 +38,19 @@ export default function Admin() {
                 }
             );
             if (response.status === 200) {
-                console.log('This is response: ', response, typeof response.status);
+                // console.log('This is response: ', response, typeof response.status);
+                console.log('token: ', response.data.access_token);
+                const access_token = response.data.access_token;
+                localStorage.setItem('access_token', access_token);
                 setIsVerified(true);
                 setLoginFailed(false);
                 // redirect('/edit-offers');
-                //ROUTE TO /edit-offers
             }
-            // setIsLoading(false);
-            console.log('setloadingfalse');
         } catch (error: any) {
             if (error.response && error.response.status === 401) {
                 setLoginFailed(true);
                 setIsVerified(false);
             }
-            // setIsLoading(false);
-            console.log('setloadingfalse');
 
             if (isRedirectError(error)) {
                 throw error;
@@ -77,10 +59,25 @@ export default function Admin() {
             setIsLoading(false);
         }
     };
-    // const toggleVerify = () => {
-    //     setIsVerified((prev) => !prev);
+
+    // const handleSubmit = async (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     //console.log('he', email, password);
+    //     console.log('TOKEN: ', Cookies.get('access_token'));
+    //     try {
+    //         const response = await axios.post('http://localhost:4000/auth', {
+    //             headers: {
+    //                 Authorization: `Bearer ${Cookies.get('access_token')}`,
+    //             },
+    //         });
+    //         console.log('res:', response);
+    //     } catch (error: any) {
+    //         //if (error.response && error.response.status === 401) {
+    //         console.log('error: ', error);
+    //         //}
+    //     }
     // };
-    console.log(email, password);
+
     return (
         <div className={styles.containerWrap}>
             <div className={styles.inputBox}>
@@ -93,14 +90,6 @@ export default function Admin() {
                         <FaArrowRight size="1.5rem" color="white" />
                     </button>
                 </form>
-                {/* <button onClick={toggleVerify}> toggle verify</button> */}
-                {/* {isLoading ? (
-                    <span className={styles.loading}>
-                        <AiOutlineLoading3Quarters size="2rem" />
-                    </span>
-                ) : (
-                    ''
-                )} */}
                 <span className={`${isLoading ? styles.loading : ''} ${styles.loadingIcon}`}>
                     <AiOutlineLoading3Quarters size="2rem" />
                 </span>
