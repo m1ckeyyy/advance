@@ -18,8 +18,9 @@ export default function Admin() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
-        //if (isVerified) redirect('/edit-offers');
+        if (isVerified) redirect('/edit-offers');
     }, [isVerified]);
+
     const handleSubmit = async (e: React.FormEvent) => {
         //console.log('j: ', Cookies.get('access_token'));
         e.preventDefault();
@@ -38,20 +39,16 @@ export default function Admin() {
                 }
             );
             if (response.status === 200) {
-                // console.log('This is response: ', response, typeof response.status);
-                console.log('token: ', response.data.access_token);
-                const access_token = response.data.access_token;
-                localStorage.setItem('access_token', access_token);
                 setIsVerified(true);
                 setLoginFailed(false);
-                // redirect('/edit-offers');
+                //redirect('/');
             }
         } catch (error: any) {
             if (error.response && error.response.status === 401) {
                 setLoginFailed(true);
                 setIsVerified(false);
             }
-
+            //this line avoids nextjs unwanted behaviour after redirection
             if (isRedirectError(error)) {
                 throw error;
             }
