@@ -1,26 +1,27 @@
 'use client';
-import { isAuthenticated } from './Auth';
-import { useEffect } from 'react';
+import { authenticate } from './Auth';
+import { useEffect, useState } from 'react';
 import { redirect } from 'next/navigation';
-import Cookies from 'js-cookie';
+//import Cookies from 'js-cookie';
 
 export default function isAuth(Component: React.ComponentType<any>) {
     return function IsAuth(props: any) {
-        const auth = true;
-        console.log(document.cookie);
-        //axios ask server
-        //if response != 200 return redirect
-        //return component
+        const [auth, setAuth] = useState<boolean | undefined>(false);
+
         useEffect(() => {
-            if (!auth) {
-                return redirect('/');
-            }
+            authenticate()
+                .then((authorizationResponse) => {
+                    setAuth(authorizationResponse);
+                })
+                .catch((e) => null);
         }, []);
 
         if (!auth) {
-            return null;
+            return redirect('/');
         }
 
         return <Component {...props} />;
+
+        //return auth ? <Component {...props} /> : redirect('/');
     };
 }

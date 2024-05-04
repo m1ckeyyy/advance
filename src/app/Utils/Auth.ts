@@ -1,17 +1,30 @@
 'use client';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-export async function isAuthenticated() {
-    const access_token = Cookies.get('name');
-    const response = await axios.post(
-        'http://127.0.0.1:4000/auth',
-        { access_token },
-        {
-            withCredentials: true,
-            headers: {
-                'Content-Type': 'application/json',
-            },
+import { useState } from 'react';
+
+export async function authenticate() {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const accessToken = Cookies.get('access_token');
+
+    //console.log('accesstoken siema; ', accessToken);
+
+    try {
+        const response = await axios.post(
+            'http://127.0.0.1:4000/auth',
+            { accessToken },
+            {
+                withCredentials: true,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            }
+        );
+        setIsAuthenticated(true);
+
+        if (response.status === 200) {
+            // setIsAuthenticated(true);
         }
-    );
-    console.log(response.data);
+        return true;
+    } catch (e) {}
 }
