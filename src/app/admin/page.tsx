@@ -22,9 +22,7 @@ export default function Admin() {
     }, [isVerified]);
 
     const handleSubmit = async (e: React.FormEvent) => {
-        //console.log('j: ', Cookies.get('access_token'));
         e.preventDefault();
-        //console.log('he', email, password);
 
         try {
             setIsLoading(true);
@@ -56,24 +54,6 @@ export default function Admin() {
             setIsLoading(false);
         }
     };
-
-    // const handleSubmit = async (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //     //console.log('he', email, password);
-    //     console.log('TOKEN: ', Cookies.get('access_token'));
-    //     try {
-    //         const response = await axios.post('http://localhost:4000/auth', {
-    //             headers: {
-    //                 Authorization: `Bearer ${Cookies.get('access_token')}`,
-    //             },
-    //         });
-    //         console.log('res:', response);
-    //     } catch (error: any) {
-    //         //if (error.response && error.response.status === 401) {
-    //         console.log('error: ', error);
-    //         //}
-    //     }
-    // };
 
     return (
         <div className={styles.containerWrap}>
