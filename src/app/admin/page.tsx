@@ -1,5 +1,6 @@
 'use client';
 
+import isAuthHOC from './../Utils/isAuthHOC';
 import { useEffect, useState } from 'react';
 import styles from './admin.module.scss';
 import axios from 'axios';
@@ -7,10 +8,8 @@ import { FaArrowRight } from 'react-icons/fa6';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { redirect } from 'next/navigation';
 import { isRedirectError } from 'next/dist/client/components/redirect';
-//@ts-ignore
-//import Cookies from 'js-cookie';
 
-export default function Admin() {
+function Admin() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [isVerified, setIsVerified] = useState<boolean>(false);
@@ -39,7 +38,6 @@ export default function Admin() {
             if (response.status === 200) {
                 setIsVerified(true);
                 setLoginFailed(false);
-                //redirect('/');
             }
         } catch (error: any) {
             if (error.response && error.response.status === 401) {
@@ -76,3 +74,4 @@ export default function Admin() {
         </div>
     );
 }
+export default isAuthHOC(Admin, 'admin');
