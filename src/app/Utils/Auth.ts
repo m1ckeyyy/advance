@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-export async function authenticate(accessToken: string): Promise<boolean> {
-    console.log('run');
+export async function validateAccessToken(accessToken: string): Promise<boolean> {
     try {
         const response = await axios.post(
             'http://127.0.0.1:4000/auth',
