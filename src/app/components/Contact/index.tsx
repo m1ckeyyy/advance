@@ -3,9 +3,12 @@ import styles from './Contact.module.scss';
 import { FaPhone } from 'react-icons/fa';
 import StyledLines from './components/StyledLines';
 
-export default function Contact() {
+type ContactProps = {
+    background?: 'transparent';
+};
+export default function Contact({ background }: ContactProps) {
     return (
-        <div className={styles.containerWrap}>
+        <div className={`${styles.containerWrap} ${background === 'transparent' ? styles.transparentBackground : ''}`}>
             <div className={styles.overlayWrap}>
                 <div className={styles.imageContainer} id="kontakt">
                     <Image src="/images/woman-phone.png" alt="Woman on the phone" width={400} height={395} />

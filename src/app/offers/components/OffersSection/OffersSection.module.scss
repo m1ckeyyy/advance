@@ -1,4 +1,22 @@
 .containerWrap {
-    background-color: rgb(164, 164, 205);
-    height: 30vh;
+    //height: 70vh;
+    padding: 8%;
+    padding-left: 12%;
+    padding-right: 12%;
+    h2 {
+        padding-bottom: 20px;
+    }
+    .topLine,
+    .bottomLine {
+        color: white;
+        background-color: white;
+        height: 2px;
+        width: 100%;
+    }
+    .offersSection {
+        height: 50vh;
+        background-color: lightgray;
+        border-radius: 10px;
+        margin: 10px;
+    }
 }
