@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { redirect } from 'next/navigation';
 import Cookies from 'js-cookie';
 
-export default function isAuthHOC(Component: React.ComponentType<any>, uponValidationRedirectTo: 'admin' | 'edit-offers') {
+export default function protectRouteHOC(Component: React.ComponentType<any>, route: 'edit-offers' | 'admin') {
     return function IsAuth(props: any) {
         const [auth, setAuth] = useState<boolean | null>(null);
 
@@ -27,17 +27,11 @@ export default function isAuthHOC(Component: React.ComponentType<any>, uponValid
             })();
         }, []);
 
-        //jezeli uponValidationRedirectTo ==  'admin' i auth == true
-        //redirect to /edit-offers
-
-        //first run before useEffect dont render nothing (wait for useEffect)
         if (auth === null) {
             return null;
         }
-        //if authorization failed && uponValidationRedirectTo ==  'edit-offers' (redirect to admin)
-        if (!auth) {
-            return redirect('/admin');
-        }
+        if (route == 'edit-offers' && !auth) return redirect('/admin');
+        if (route == 'admin' && auth) return redirect('/edit-offers');
 
         return <Component {...props} />;
     };

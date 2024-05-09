@@ -1,6 +1,6 @@
 'use client';
 
-import isAuthHOC from './../Utils/isAuthHOC';
+import protectRouteHOC from '../Utils/protectRouteHOC';
 import { useEffect, useState } from 'react';
 import styles from './admin.module.scss';
 import axios from 'axios';
@@ -74,4 +74,4 @@ function Admin() {
         </div>
     );
 }
-export default isAuthHOC(Admin, 'admin');
+export default protectRouteHOC(Admin, 'admin');

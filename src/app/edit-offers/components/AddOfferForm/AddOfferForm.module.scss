@@ -1,0 +1,10 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(28, 45, 39);
+    padding: 10px;
+    border-radius: 15px;
+    .submitBtn {
+        width: 100px;
+    }
+}
