@@ -2,9 +2,9 @@ import styles from './LandingPage.module.scss';
 import NavBar from '@/app/components/NavBar';
 import StyledLines from './components/StyledLines';
 import { IoLanguage } from 'react-icons/io5';
-import { Mochiy_Pop_One, Work_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Mochiy_Pop_One, Work_Sans } from 'next/font/google';
 
 const mochiyPopOne = Mochiy_Pop_One({ subsets: ['latin'], weight: '400' });
 const workSans = Work_Sans({ subsets: ['latin'], weight: '200' });

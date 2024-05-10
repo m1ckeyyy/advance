@@ -1,10 +1,48 @@
 .formContainer {
     display: flex;
-    flex-direction: column;
-    background-color: rgb(28, 45, 39);
+    flex-direction: row;
+    background-color: #4384c9a3;
     padding: 10px;
     border-radius: 15px;
+    flex-wrap: wrap;
     .submitBtn {
         width: 100px;
+        height: 30px;
+        margin: 10px;
+        background-color: #232536;
+        border: none;
+        border-radius: 5px;
+        // font-weight: bold;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+        &:hover {
+            background-color: #1c64b0;
+            border: 2px solid rgb(214, 211, 211);
+        }
+    }
+    .inputLabel {
+        display: flex;
+        flex-direction: column;
+        padding: 5px 10px;
+        width: 25%;
+        span {
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+        .inputField {
+            padding: 10px 10px;
+            font-size: 1.1rem;
+            background-color: #232536;
+            border-radius: 5px;
+            border: none;
+        }
+    }
+    .tytul {
+        width: 75%;
+    }
+    .opis {
+        width: 100%;
     }
 }
