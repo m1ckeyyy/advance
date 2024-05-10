@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { redirect } from 'next/navigation';
 import Cookies from 'js-cookie';
 
-export default function protectRouteHOC(Component: React.ComponentType<any>, route: 'edit-offers' | 'admin') {
+export default function protectRouteHOC(Component: React.ComponentType<any>, route: 'offers-dashboard' | 'admin') {
     return function IsAuth(props: any) {
         const [auth, setAuth] = useState<boolean | null>(null);
 
@@ -18,7 +18,7 @@ export default function protectRouteHOC(Component: React.ComponentType<any>, rou
                     return;
                 }
                 try {
-                    const isAuthenticated = await validateAccessToken(accessToken);
+                    const isAuthenticated = await validateAccessToken();
                     setAuth(isAuthenticated);
                 } catch (error) {
                     console.error('Error during authentication:', error);
@@ -30,8 +30,8 @@ export default function protectRouteHOC(Component: React.ComponentType<any>, rou
         if (auth === null) {
             return null;
         }
-        if (route == 'edit-offers' && !auth) return redirect('/admin');
-        if (route == 'admin' && auth) return redirect('/edit-offers');
+        if (route == 'offers-dashboard' && !auth) return redirect('/admin');
+        if (route == 'admin' && auth) return redirect('/offers-dashboard');
 
         return <Component {...props} />;
     };

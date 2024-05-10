@@ -17,7 +17,7 @@ function Admin() {
     const [axiosFeedback, setAxiosFeedback] = useState<string | null>(null);
 
     useEffect(() => {
-        if (isVerified) redirect('/edit-offers');
+        if (isVerified) redirect('/offers-dashboard');
     }, [isVerified]);
 
     const handleSubmit = async (e: React.FormEvent) => {
