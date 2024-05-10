@@ -3,9 +3,9 @@ import styles from './NavBar.module.scss';
 import Link from 'next/link';
 import { IoMenu } from 'react-icons/io5';
 import { IoCloseSharp } from 'react-icons/io5';
-import { DM_Sans } from 'next/font/google';
 import Image from 'next/image';
 import { useState } from 'react';
+import { DM_Sans } from 'next/font/google';
 
 const dmSans = DM_Sans({ subsets: ['latin'], weight: '300' });
 
