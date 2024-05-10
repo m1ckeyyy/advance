@@ -3,12 +3,15 @@
 import { useState } from 'react';
 import styles from './AddOfferForm.module.scss';
 import { DM_Sans } from 'next/font/google';
+import { uploadOfferToDatabase } from '../../hooks/uploadOfferToDatabase';
+import Cookies from 'js-cookie';
+import { redirect } from 'next/navigation';
 
 const dmSans = DM_Sans({ subsets: ['latin'], weight: '300' });
 
-type Offer = {
+export type Offer = {
     tytul: string;
-    // opis: string;
+    opis: string;
     numer_kontaktowy: string;
     cena: string;
     metraz: string;
@@ -31,7 +34,7 @@ export default function AddOfferForm() {
 
     const inputFields: Offer = {
         tytul: 'Tytuł',
-        // opis: 'Opis',
+        opis: 'Opis',
         numer_kontaktowy: 'Numer kontaktowy',
         cena: 'Cena',
         metraz: 'Metraż',
@@ -52,12 +55,14 @@ export default function AddOfferForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Perform form submission here (e.g., send data to backend)
 
-        // Redirect to some page after successful form submission
-        //router.push('/');
+        const accessToken = Cookies.get('access_token');
+
+        if (!accessToken) return redirect('/admin');
+
+        uploadOfferToDatabase(offer);
     };
-
+    console.log(offer);
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setOffer((prevOffer) => ({
@@ -68,19 +73,22 @@ export default function AddOfferForm() {
 
     return (
         <form onSubmit={handleSubmit} className={`${styles.formContainer}`}>
-            {Object.entries(inputFields).map(([fieldName, label]) => (
-                <label key={fieldName} className={`${styles.inputLabel} ${styles[fieldName]}`}>
-                    <span>{label}:</span>
-                    <input
-                        type="text"
-                        name={fieldName}
-                        placeholder={label}
-                        value={(offer as any)[fieldName] || ''}
-                        onChange={handleChange}
-                        className={`${styles.inputField} ${dmSans.className} `}
-                    />
-                </label>
-            ))}
+            {Object.entries(inputFields).map(([fieldName, label]) => {
+                if (fieldName == 'opis') return;
+                return (
+                    <label key={fieldName} className={`${styles.inputLabel} ${styles[fieldName]}`}>
+                        <span>{label}:</span>
+                        <input
+                            type="text"
+                            name={fieldName}
+                            placeholder={label}
+                            value={(offer as any)[fieldName] || ''}
+                            onChange={handleChange}
+                            className={`${styles.inputField} ${dmSans.className} `}
+                        />
+                    </label>
+                );
+            })}
             <label className={`${styles.inputLabel} ${styles.opis}`}>
                 <span>Opis:</span>
                 <textarea
