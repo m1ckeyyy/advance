@@ -1,6 +1,6 @@
 'use client';
 
-import protectRouteHOC from '../Utils/protectRouteHOC';
+import protectRouteHOC from '@/app/Utils/protectRouteHOC';
 import { useEffect, useState } from 'react';
 import styles from './admin.module.scss';
 import axios from 'axios';

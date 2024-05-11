@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Offer } from '../components/AddOfferForm';
+import { Offer } from '../offers-dashboard/components/AddOfferForm';
 
 export async function uploadOfferToDatabase(offer: Partial<Offer>): Promise<boolean> {
     try {
@@ -13,9 +13,9 @@ export async function uploadOfferToDatabase(offer: Partial<Offer>): Promise<bool
                 },
             }
         );
-        return response.status === 200;
+        return response.status === 201;
     } catch (error) {
-        console.error('Authentication error:', error);
+        console.error('Offer upload error:', error);
         return false;
     }
 }
