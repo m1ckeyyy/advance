@@ -1,10 +1,9 @@
 'use client';
 
 import AddOfferForm from './components/AddOfferForm';
-import DisplayOffers from './components/DisplayOffers';
-import protectRouteHOC from '../Utils/protectRouteHOC';
+import { DisplayOffers } from '@/app/components';
+import protectRouteHOC from '@/app/Utils/protectRouteHOC';
 import styles from './OffersDashboard.module.scss';
-
 import { DM_Sans } from 'next/font/google';
 import { useState } from 'react';
 
@@ -15,9 +14,9 @@ function OffersDashboard() {
 
     return (
         <div className={`${styles.containerWrap} ${dmSans.className}`}>
-            <h1>Admin Panel</h1>
+            <h1>Admin Dashboard</h1>
             <button onClick={() => setShowOfferPanel((prev) => !prev)} className={styles.addOfferBtn}>
-                Dodaj oferte {showOfferPanel ? '◀' : '▶'}
+                {showOfferPanel ? 'Anuluj ◀' : 'Dodaj oferte  ▶'}
             </button>
             {showOfferPanel ? <AddOfferForm /> : ''}
             <DisplayOffers />

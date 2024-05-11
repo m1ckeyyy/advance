@@ -5,4 +5,5 @@ import Testimonials from './Testimonials';
 import AboutUs from './AboutUs';
 import Footer from './Footer';
 import Contact from './Contact';
-export { LandingPage, LocationOffers, Testimonials, AboutUs, Footer, Contact };
+import DisplayOffers from './DisplayOffers';
+export { LandingPage, LocationOffers, Testimonials, AboutUs, Footer, Contact, DisplayOffers };

@@ -1,6 +1,8 @@
 //import styles from './page.module.css';
 
 import { LandingPage, LocationOffers, Testimonials, AboutUs, Footer, Contact } from './components';
+import { ToastContainer } from 'react-toastify';
+
 export default function Home() {
     return (
         <div>
@@ -10,6 +12,7 @@ export default function Home() {
             <Testimonials />
             <Contact />
             <Footer />
+            <ToastContainer />
         </div>
     );
 }
