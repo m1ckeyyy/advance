@@ -26,15 +26,19 @@ function Admin() {
         try {
             setIsLoading(true);
             const response = await axios.post(
+                // 'http://localhost:4000/admin-login',
                 'http://127.0.0.1:4000/admin-login',
+                // 'http://3.76.207.157:4000/admin-login',
                 { email, password },
                 {
                     withCredentials: true,
+
                     headers: {
                         'Content-Type': 'application/json',
                     },
                 }
             );
+            console.log('admin response: ', response.status);
             if (response.status === 200) {
                 setIsVerified(true);
                 setAxiosFeedback(null);
