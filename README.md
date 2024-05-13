@@ -20,3 +20,5 @@ With a focus on empowering agents and streamlining operations this app brings fe
 ![Overview Image](./public/images/adv2.png) 
 
 ![Overview Image](./public/images/adv1.png) 
+
+### License: [MIT](https://github.com/m1ckeyyy/advance/blob/master/LICENSE)
