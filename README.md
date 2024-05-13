@@ -1,6 +1,7 @@
 This project was built with [Next.js](https://nextjs.org/).
 
-**The Advance Nieruchomości App** is a platform for a real estate brokerage company.
+# **The Advance Nieruchomości App** 
+The Advance Nieruchomości App is a platform for a real estate brokerage company.
 
 With a focus on empowering agents and streamlining operations this app brings features like:
 
