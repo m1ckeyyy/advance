@@ -7,17 +7,18 @@ import Cookies from 'js-cookie';
 export default function protectRouteHOC(Component: React.ComponentType<any>, route: 'offers-dashboard' | 'admin') {
     return function IsAuth(props: any) {
         const [auth, setAuth] = useState<boolean | null>(null);
-
+        // console.log('cos nie tak z protectroute');
         useEffect(() => {
             console.log('HOC run');
             (async function () {
                 const accessToken = Cookies.get('access_token');
-
+                console.log('czy jest AT?: ', accessToken);
                 if (!accessToken) {
                     setAuth(false);
                     return;
                 }
                 try {
+                    console.log('HALO protectRoute');
                     const isAuthenticated = await validateAccessToken();
                     setAuth(isAuthenticated);
                 } catch (error) {

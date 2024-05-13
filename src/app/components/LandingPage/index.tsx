@@ -39,7 +39,7 @@ export default function LandingPage() {
                     <div className={styles.imgWrap}>
                         <Image src="/images/sample-man.png" width={554} height={451} alt="man" className={styles.manImg} />
                         <p className={styles.name}>
-                            Ziutek Ziutkowski,
+                            Paweł Przychylny,
                             <br />
                             Advance Nieruchomości
                         </p>
