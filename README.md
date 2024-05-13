@@ -13,7 +13,7 @@ With a focus on empowering agents and streamlining operations this app brings fe
 
 - **Admin Dashboard:** Seamlessly add new listings and efficiently manage existing ones from a centralized control panel.
 
-## Preview images
+## Preview images 
 
 ![Overview Image](./public/images/adv3.png) 
 
