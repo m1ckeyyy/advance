@@ -2,7 +2,7 @@
 
 import AddOfferForm from './components/AddOfferForm';
 import { DisplayOffers } from '@/app/components';
-import protectRouteHOC from '@/app/Utils/protectRouteHOC';
+import protectRouteHOC from '@/app/_utils/protectRouteHOC';
 import styles from './OffersDashboard.module.scss';
 import { DM_Sans } from 'next/font/google';
 import { useState } from 'react';

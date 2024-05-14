@@ -1,6 +1,6 @@
 'use client';
 
-import protectRouteHOC from '@/app/Utils/protectRouteHOC';
+import protectRouteHOC from '@/app/_utils/protectRouteHOC';
 import { useEffect, useState } from 'react';
 import styles from './admin.module.scss';
 import axios from 'axios';
@@ -26,8 +26,7 @@ function Admin() {
         try {
             setIsLoading(true);
             const response = await axios.post(
-                // 'http://localhost:4000/admin-login',
-                'http://127.0.0.1:4000/admin-login',
+                '/api/admin-login',
                 // 'http://3.76.207.157:4000/admin-login',
                 { email, password },
                 {
@@ -38,7 +37,7 @@ function Admin() {
                     },
                 }
             );
-            console.log('admin response: ', response.status);
+            console.log('admin response: ', response);
             if (response.status === 200) {
                 setIsVerified(true);
                 setAxiosFeedback(null);

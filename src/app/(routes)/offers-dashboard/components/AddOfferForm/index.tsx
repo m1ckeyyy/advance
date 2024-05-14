@@ -3,8 +3,8 @@
 import styles from './AddOfferForm.module.scss';
 import { useState } from 'react';
 import { DM_Sans, Island_Moments } from 'next/font/google';
-import { uploadOfferToDatabase } from '@/app/Utils/uploadOfferToDatabase';
-import { offerAddingSuccessToast, offerAddingFailToast } from '@/app/Utils/Notifications';
+import { uploadOfferToDatabase } from '@/app/_utils/uploadOfferToDatabase';
+import { offerAddingSuccessToast, offerAddingFailToast } from '@/app/_utils/Notifications';
 import { ToastContainer } from 'react-toastify';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { nanoid } from 'nanoid';
