@@ -3,10 +3,6 @@ import styles from './NavBar.module.scss';
 import Link from 'next/link';
 import { IoMenu } from 'react-icons/io5';
 import { IoCloseSharp } from 'react-icons/io5';
-
-import { TbBuildingEstate } from 'react-icons/tb';
-import { MdOutlineRealEstateAgent } from 'react-icons/md';
-
 import { DM_Sans } from 'next/font/google';
 import Image from 'next/image';
 import { useState } from 'react';
