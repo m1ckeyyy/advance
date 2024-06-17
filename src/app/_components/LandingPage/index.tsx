@@ -1,5 +1,5 @@
 import styles from './LandingPage.module.scss';
-import NavBar from '@/app/components/NavBar';
+import NavBar from '@/app/_components/NavBar';
 import StyledLines from './components/StyledLines';
 import { IoLanguage } from 'react-icons/io5';
 import Image from 'next/image';

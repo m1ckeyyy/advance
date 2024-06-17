@@ -1,6 +1,6 @@
 //import styles from './page.module.css';
 
-import { LandingPage, LocationOffers, Testimonials, AboutUs, Footer, Contact } from './components';
+import { LandingPage, LocationOffers, Testimonials, AboutUs, Footer, Contact } from './_components';
 import { ToastContainer } from 'react-toastify';
 
 export default function Home() {
