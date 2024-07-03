@@ -1,7 +1,7 @@
 'use client';
 
 import AddOfferForm from './components/AddOfferForm';
-import { DisplayOffers } from '@/app/components';
+import { DisplayOffers } from '@/app/_components';
 import protectRouteHOC from '@/app/_utils/protectRouteHOC';
 import styles from './OffersDashboard.module.scss';
 import { DM_Sans } from 'next/font/google';

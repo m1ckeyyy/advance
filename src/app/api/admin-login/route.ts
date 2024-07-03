@@ -1,6 +1,6 @@
 //admin-login
 import { NextRequest, NextResponse } from 'next/server';
-import mongoose from 'mongoose';
+import mongoose, { Mongoose } from 'mongoose';
 
 interface LoginRequestBody {
     email: string;
@@ -17,6 +17,8 @@ export async function POST(request: NextRequest) {
         }
         email = email.toLowerCase();
         // Logika uwierzytelniania
+        mongoose.set();
+
         console.log('This come from api: ', email, password);
         return NextResponse.json({ message: 'Logged in successfully' }, { status: 200 });
     } catch (e) {
