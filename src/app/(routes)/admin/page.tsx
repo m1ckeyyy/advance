@@ -27,7 +27,6 @@ function Admin() {
             setIsLoading(true);
             const response = await axios.post(
                 '/api/admin-login',
-                // 'http://3.76.207.157:4000/admin-login',
                 { email, password },
                 {
                     withCredentials: true,

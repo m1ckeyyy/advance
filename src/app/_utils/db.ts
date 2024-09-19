@@ -1,20 +1,26 @@
 import { MongoClient } from 'mongodb';
 import { NextRequest, NextResponse } from 'next/server';
 
-let cachedDb: any = null;
+let database: any = null; //cached
 
 export async function connectToDatabase() {
+    if (database) return database;
     try {
         console.log('Connecting to DB...');
+
         const uri = process.env.MONGO_URI;
-        console.log('uri', uri);
         if (!uri) throw new Error('Add MongoDB URI to .env');
 
         const client = new MongoClient(uri);
+        await client.connect();
 
-        console.log('siema: ', cachedDb);
+        database = client.db('advance');
+        console.log('Successfully connected to DB');
+
+        return database;
     } catch (e: any) {
         console.log(e.message);
+        throw new Error('Failed to connect to DB');
     }
     // if (client.isConnected()) {
     // }
