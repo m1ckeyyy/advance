@@ -6,9 +6,6 @@ export async function validateAccessToken(): Promise<boolean> {
 
         const response = await axios.post(
             '/api/auth',
-            // 'http://localhost:4000/auth',
-            // 'http://127.0.0.1:4000/auth',
-            // 'http://3.76.207.157:4000/auth',
             {},
             {
                 withCredentials: true,

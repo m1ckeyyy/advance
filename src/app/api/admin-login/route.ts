@@ -1,7 +1,7 @@
-//admin-login
 import { connectToDatabase } from '@/app/_utils/db';
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 interface LoginRequestBody {
     email: string;
     password: string;
@@ -32,11 +32,20 @@ export async function POST(request: NextRequest) {
 
         if (!isMatching) return respondWithError('Invalid email or password', 401);
 
-        console.log('ismatching: ', isMatching);
-        console.log('This come from api: ', email, password);
-        return NextResponse.json({ message: 'Logged in successfully' }, { status: 200 });
+        const accessToken = jwt.sign({ email }, process.env.ACCESS_TOKEN_SECRET!, {
+            expiresIn: '2 days',
+        });
+
+        const response = NextResponse.json({ message: 'Admin verified' });
+
+        response.cookies.set('access_token', accessToken, {
+            httpOnly: true,
+            maxAge: 9999999,
+            path: '/',
+        });
+
+        return response;
     } catch (e) {
-        console.log(e);
-        if (e) return NextResponse.json({ message: 'Invalid JSON, Add email and password in request body' }, { status: 400 });
+        return respondWithError('Might be invalid JSON, check if you added email and password in the body', 400);
     }
 }
