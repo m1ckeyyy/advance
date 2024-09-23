@@ -49,6 +49,8 @@ function Admin() {
                 setAxiosFeedback('Unauthorized (401)');
             } else if (error.response && error.response.status === 404) {
                 setAxiosFeedback('Not found (404)');
+            } else {
+                setAxiosFeedback(`Error status: ${error.response.status}`)
             }
             /* This line works around the NextJS's unwanted error behaviour upon redirection */
             if (isRedirectError(error)) {
