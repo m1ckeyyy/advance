@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
 
     try {
         const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET!) as JwtPayload;
-        console.log('dd', decoded);
+        console.log('decoded: ', decoded);
         const email = decoded.email;
         console.log(`${email} successfully verified with JWT`);
 

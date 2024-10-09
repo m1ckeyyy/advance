@@ -8,6 +8,7 @@ export default function protectRouteHOC(Component: React.ComponentType<any>, rou
     return function IsAuth(props: any) {
         const [auth, setAuth] = useState<boolean | null>(null);
         useEffect(() => {
+            console.log('dc', document.cookie);
             console.log('HOC run');
             (async function () {
                 const accessToken = Cookies.get('access_token');
@@ -25,14 +26,23 @@ export default function protectRouteHOC(Component: React.ComponentType<any>, rou
                     setAuth(false);
                 }
             })();
+            console.log('wtf: ', auth);
         }, []);
 
         if (auth === null) {
-            return null;
+            return <div>Loading...</div>;
         }
-        if (route == 'offers-dashboard' && !auth) return redirect('/admin');
-        if (route == 'admin' && auth) return redirect('/offers-dashboard');
+        console.log(auth, route, 'chuj');
+        if (route == 'offers-dashboard' && !auth) {
+            console.log('1');
+            return redirect('/admin');
+        }
+        if (route == 'admin' && auth) {
+            console.log('2');
+            return redirect('/offers-dashboard');
+        }
 
+        console.log('rendering...', auth, route);
         return <Component {...props} />;
     };
 }
